@@ -1,4 +1,7 @@
+"use client";
+
 import { UserPlus, Settings, Rocket, TrendingUp } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function HowItWorks() {
   const steps = [
@@ -32,7 +35,13 @@ export default function HowItWorks() {
     <section className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             How it works
           </h2>
@@ -40,14 +49,22 @@ export default function HowItWorks() {
             Get started in four simple steps. No complex setup, no long
             training—just straightforward inventory management.
           </p>
-        </div>
+        </motion.div>
 
         {/* Steps grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step) => {
+          {steps.map((step, index) => {
             const Icon = step.icon;
             return (
-              <div key={step.step} className="relative">
+              <motion.div
+                key={step.step}
+                className="relative"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              >
                 {/* Step number */}
                 <div className="text-6xl font-bold text-blue-50 mb-4">
                   {step.step}
@@ -63,13 +80,19 @@ export default function HowItWorks() {
                   {step.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">{step.desc}</p>
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16">
+        <motion.div
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
           <a
             href="/demo"
             className="inline-flex items-center px-8 py-3 bg-blue-600 text-white font-medium rounded-lg shadow-sm hover:bg-blue-700 transition-colors"
@@ -79,7 +102,7 @@ export default function HowItWorks() {
           <p className="mt-3 text-sm text-gray-500">
             Free for 6 months • We handle the setup
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -43,21 +44,32 @@ export default function FAQ() {
     <section className="bg-gray-50 py-8 md:py-20">
       <div className="max-w-4xl mx-auto px-6">
         {/* Section header */}
-        <div className="text-center mb-4 md:mb-12">
+        <motion.div
+          className="text-center mb-4 md:mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Frequently asked questions
           </h2>
           <p className="mt-4 text-lg text-gray-600">
             Everything you need to know about SyncStore
           </p>
-        </div>
+        </motion.div>
 
         {/* FAQ items */}
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-white rounded-xl border border-gray-200 overflow-hidden"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
@@ -66,27 +78,39 @@ export default function FAQ() {
                 <span className="text-lg font-semibold text-gray-900 pr-4">
                   {faq.question}
                 </span>
-                <ChevronDown
-                  className={`w-5 h-5 text-gray-500 flex-shrink-0 transition-transform duration-200 ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
-                />
+                <motion.div
+                  animate={{ rotate: openIndex === index ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDown className="w-5 h-5 text-gray-500 flex-shrink-0" />
+                </motion.div>
               </button>
-              <div
-                className={`overflow-hidden transition-all duration-200 ${
-                  openIndex === index ? "max-h-96" : "max-h-0"
-                }`}
-              >
-                <div className="px-6 pb-5 text-gray-600 leading-relaxed">
-                  {faq.answer}
-                </div>
-              </div>
-            </div>
+              <AnimatePresence initial={false}>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                  >
+                    <div className="px-6 pb-5 text-gray-600 leading-relaxed">
+                      {faq.answer}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-12">
+        <motion.div
+          className="text-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           <p className="text-gray-600 mb-4">Still have questions?</p>
           <a
             href="/contact"
@@ -94,7 +118,7 @@ export default function FAQ() {
           >
             Contact our support team →
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

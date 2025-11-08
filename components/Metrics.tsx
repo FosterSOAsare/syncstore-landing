@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
 
 function useCountTo(target: number, duration = 1200) {
   const [value, setValue] = React.useState(0);
@@ -42,16 +43,29 @@ export default function Metrics() {
   return (
     <section className="bg-white border-y border-gray-200">
       <div className="max-w-7xl mx-auto px-6 py-8 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x divide-gray-100">
-          {items.map((it) => (
-            <MetricCard
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x divide-gray-100"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          {items.map((it, index) => (
+            <motion.div
               key={it.label}
-              label={it.label}
-              value={it.value}
-              suffix={it.suffix}
-            />
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
+              <MetricCard
+                label={it.label}
+                value={it.value}
+                suffix={it.suffix}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
