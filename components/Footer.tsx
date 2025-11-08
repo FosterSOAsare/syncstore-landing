@@ -1,12 +1,24 @@
-import { Twitter, Linkedin, Github, Facebook } from "lucide-react";
+"use client";
+
+import { Twitter, Linkedin, Github, Facebook, Mail, Phone } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  const isActive = (path: string) => {
+    if (path === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(path);
+  };
+
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Brand Column */}
-          <div className="lg:col-span-1">
+          <div>
             <h3 className="text-gray-900 text-xl font-bold mb-4">SyncStore</h3>
             <p className="text-sm text-gray-600 leading-relaxed mb-6">
               Offline-first inventory management for modern retail and
@@ -50,113 +62,80 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <a
-                  href="#features"
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                  href="/"
+                  className={`hover:text-blue-600 transition-colors ${
+                    isActive("/")
+                      ? "text-blue-600 font-semibold"
+                      : "text-gray-600"
+                  }`}
                 >
-                  Features
+                  Home
                 </a>
               </li>
               <li>
                 <a
-                  href="#pricing"
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                  href="/pricing"
+                  className={`hover:text-blue-600 transition-colors ${
+                    isActive("/pricing")
+                      ? "text-blue-600 font-semibold"
+                      : "text-gray-600"
+                  }`}
                 >
                   Pricing
                 </a>
               </li>
               <li>
                 <a
-                  href="#demo"
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                  href="/reviews"
+                  className={`hover:text-blue-600 transition-colors ${
+                    isActive("/reviews")
+                      ? "text-blue-600 font-semibold"
+                      : "text-gray-600"
+                  }`}
                 >
-                  Request Demo
+                  Reviews
                 </a>
               </li>
               <li>
                 <a
-                  href="#download"
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                  href="/faq"
+                  className={`hover:text-blue-600 transition-colors ${
+                    isActive("/faq")
+                      ? "text-blue-600 font-semibold"
+                      : "text-gray-600"
+                  }`}
                 >
-                  Download
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company Column */}
-          <div>
-            <h4 className="text-gray-900 text-sm font-bold mb-4">Company</h4>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <a
-                  href="#about"
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
-                >
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#blog"
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
-                >
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#careers"
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
-                >
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
-                >
-                  Contact
+                  FAQ
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Resources Column */}
+          {/* Contact Column */}
           <div>
-            <h4 className="text-gray-900 text-sm font-bold mb-4">Resources</h4>
+            <h4 className="text-gray-900 text-sm font-bold mb-4">Contact Us</h4>
             <ul className="space-y-3 text-sm">
-              <li>
+              <li className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-gray-600" />
                 <a
-                  href="#documentation"
+                  href="mailto:support@syncstore.com"
                   className="text-gray-600 hover:text-blue-600 transition-colors"
                 >
-                  Documentation
+                  support@syncstore.com
                 </a>
               </li>
-              <li>
+              <li className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-gray-600" />
                 <a
-                  href="#support"
+                  href="tel:+1234567890"
                   className="text-gray-600 hover:text-blue-600 transition-colors"
                 >
-                  Support Center
+                  +1 (234) 567-890
                 </a>
               </li>
-              <li>
-                <a
-                  href="#community"
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
-                >
-                  Community
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#status"
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
-                >
-                  System Status
-                </a>
+              <li className="text-gray-600 mt-4">
+                <p className="text-xs">Monday - Friday</p>
+                <p className="text-xs">9:00 AM - 6:00 PM EST</p>
               </li>
             </ul>
           </div>
@@ -168,24 +147,16 @@ export default function Footer() {
             <p className="text-sm text-gray-600">
               © {new Date().getFullYear()} SyncStore. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm text-gray-600">
+            <div className="text-sm">
               <a
-                href="#privacy"
-                className="hover:text-blue-600 transition-colors"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#terms"
-                className="hover:text-blue-600 transition-colors"
+                href="/terms"
+                className={`hover:text-blue-600 transition-colors ${
+                  isActive("/terms")
+                    ? "text-blue-600 font-semibold"
+                    : "text-gray-600"
+                }`}
               >
                 Terms of Service
-              </a>
-              <a
-                href="#cookies"
-                className="hover:text-blue-600 transition-colors"
-              >
-                Cookie Policy
               </a>
             </div>
           </div>

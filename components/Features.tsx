@@ -15,7 +15,7 @@ export default function Features() {
     {
       icon: Package,
       title: "Product variants",
-      desc: "Manage products with multiple variants (size, color, etc.) and track stock per variant across branches.",
+      desc: "Sell products in multiple units (pieces, boxes, cartons, dozens) with the ability to convert between units and separate pricing per unit.",
     },
     {
       icon: Store,

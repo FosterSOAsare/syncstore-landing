@@ -7,17 +7,19 @@ export default function CTASection() {
         </h2>
         <p className="mt-6 text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">
           Join thousands of businesses managing their inventory with confidence.
-          Start your free account today and experience the difference.
+          Request a demo and our team will set up your account.
         </p>
 
         <div className="mt-10">
           <a
-            href="/signin"
+            href="/demo"
             className="inline-flex items-center px-16 py-4 bg-blue-600 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-colors"
           >
-            Start now
+            Request Demo
           </a>
-          <p className="mt-4 text-sm text-gray-600">No payment required</p>
+          <p className="mt-4 text-sm text-gray-600">
+            Free for 6 months • We'll set up your account
+          </p>
         </div>
       </div>
     </section>

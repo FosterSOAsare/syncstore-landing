@@ -1,4 +1,4 @@
-import WHY_CHOOSE_US_SECTIONS from "./data/posSections";
+import WHY_CHOOSE_US_SECTIONS from "../data/posSections";
 
 export default function WhyChooseUs() {
   const sections = WHY_CHOOSE_US_SECTIONS;
@@ -29,8 +29,8 @@ export default function WhyChooseUs() {
               >
                 {/* Image container */}
                 <div className="w-full h-auto lg:w-1/2">
-                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-12 h-full flex items-center justify-center shadow-sm border border-blue-100">
-                    <div className="w-full h-full bg-white rounded-xl flex items-center justify-center text-gray-400 shadow-md">
+                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-12 h-full flex items-center justify-center shadow-sm border border-blue-100">
+                    <div className="w-full h-64 md:h-full bg-white rounded-xl flex items-center justify-center text-gray-400 shadow-md">
                       <div className="text-center">
                         <div className="text-sm">Image placeholder</div>
                       </div>
