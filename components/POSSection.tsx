@@ -7,7 +7,7 @@ export default function WhyChooseUs() {
   const sections = WHY_CHOOSE_US_SECTIONS;
 
   return (
-    <section className="relative overflow-hidden bg-white py-20">
+    <section className="relative overflow-hidden bg-white py-10 md:py-20">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section header */}
         <motion.div
@@ -27,7 +27,7 @@ export default function WhyChooseUs() {
         </motion.div>
 
         {/* Feature items */}
-        <div className="space-y-32">
+        <div className="space-y-16 md:space-y-32">
           {sections.map((s, sectionIndex) => {
             return (
               <motion.div
