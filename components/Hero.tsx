@@ -14,7 +14,7 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-white">
       {/* Floating icons */}
       <motion.div
-        className="absolute z-[15] hover:bg-primary text-blue-500 hover:text-white hover:cursor-pointer top-4 md:top-20 left-4 md:left-[8%] p-3 bg-white/80 backdrop-blur-sm rounded-lg shadow-sm"
+        className="absolute z-[15] hover:bg-primary text-blue-500 hover:text-white hover:cursor-pointer top-4 md:top-20 left-4 md:left-[8%] p-2 md:p-3 bg-white/80 backdrop-blur-sm rounded-lg shadow-sm"
         initial={{ opacity: 0, y: -20 }}
         animate={{
           opacity: 1,
@@ -25,10 +25,10 @@ export default function Hero() {
           y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
         }}
       >
-        <Package className="w-6 h-6" />
+        <Package className="w-4 md:w-6 h-4 md:h-6" />
       </motion.div>
       <motion.div
-        className="absolute z-[15] hover:bg-primary text-blue-500 hover:text-white hover:cursor-pointer top-8 md:top-32 right-6 md:right-[15%] p-3 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm rotate-12"
+        className="absolute z-[15] hover:bg-primary text-blue-500 hover:text-white hover:cursor-pointer top-8 md:top-32 right-6 md:right-[15%] p-2 md:p-3 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm rotate-12"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{
           opacity: 1,
@@ -41,10 +41,10 @@ export default function Hero() {
           rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" },
         }}
       >
-        <Building2 className="w-7 h-7" />
+        <Building2 className="w-4 md:w-6 h-4 md:h-6" />
       </motion.div>
       <motion.div
-        className="absolute z-[15] hover:bg-primary text-blue-500 hover:text-white hover:cursor-pointer top-55 md:top-80 left-8 md:left-[15%] p-3 bg-white/80 backdrop-blur-sm rounded-lg shadow-sm -rotate-12"
+        className="absolute z-[15] hover:bg-primary text-blue-500 hover:text-white hover:cursor-pointer top-55 md:top-80 left-8 md:left-[15%] p-2 md:p-3 bg-white/80 backdrop-blur-sm rounded-lg shadow-sm -rotate-12"
         initial={{ opacity: 0, x: -20 }}
         animate={{
           opacity: 1,
@@ -57,10 +57,10 @@ export default function Hero() {
           y: { duration: 3.5, repeat: Infinity, ease: "easeInOut" },
         }}
       >
-        <WifiOff className="w-6 h-6" />
+        <WifiOff className="w-4 md:w-6 h-4 md:h-6" />
       </motion.div>
       <motion.div
-        className="absolute z-[15] hover:bg-primary text-blue-500 hover:text-white hover:cursor-pointer top-[45%] md:top-[40%] right-2 md:right-[2%] p-3 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm rotate-3"
+        className="absolute z-[15] hover:bg-primary text-blue-500 hover:text-white hover:cursor-pointer top-[45%] md:top-[40%] right-2 md:right-[2%] p-2 md:p-3 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm rotate-3"
         initial={{ opacity: 0, x: 20 }}
         animate={{
           opacity: 1,
@@ -73,11 +73,11 @@ export default function Hero() {
           rotate: { duration: 3.2, repeat: Infinity, ease: "easeInOut" },
         }}
       >
-        <RefreshCw className="w-6 h-6" />
+        <RefreshCw className="w-4 md:w-6 h-4 md:h-6" />
       </motion.div>
 
       <motion.div
-        className="absolute z-[15] hover:bg-primary text-blue-500 hover:text-white hover:cursor-pointer top-[17%] md:top-[25%] right-4 md:right-[15%] p-3 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm rotate-6"
+        className="absolute z-[15] hover:bg-primary text-blue-500 hover:text-white hover:cursor-pointer top-[17%] md:top-[25%] right-4 md:right-[15%] p-2 md:p-3 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm rotate-6"
         initial={{ opacity: 0, y: -20 }}
         animate={{
           opacity: 1,
@@ -90,7 +90,7 @@ export default function Hero() {
           rotate: { duration: 3.8, repeat: Infinity, ease: "easeInOut" },
         }}
       >
-        <CreditCard className="w-6 h-6" />
+        <CreditCard className="w-4 md:w-6 h-4 md:h-6" />
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-6 py-16 lg:py-24 flex flex-col justify-center items-center gap-16 relative z-10">
