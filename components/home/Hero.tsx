@@ -118,9 +118,9 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             Manage inventory, sales, and operations with confidence — even
-            without internet. Our offline-first system keeps your business
-            running smoothly across stores, warehouses, and distribution centers
-            while syncing seamlessly when you're back online.
+            without internet. Works perfectly offline to keep your business
+            running smoothly across stores, warehouses, and distribution
+            centers. Everything syncs automatically when you're back online.
           </motion.p>
 
           <motion.div
@@ -131,10 +131,10 @@ export default function Hero() {
           >
             {[
               { icon: WifiOff, text: "Works offline everywhere" },
-              { icon: Building2, text: "Multi-branch & warehouse support" },
-              { icon: Package, text: "Multi-unit product variants" },
-              { icon: RefreshCw, text: "Real-time sync" },
-              { icon: CreditCard, text: "Built-in POS & payments" },
+              { icon: Building2, text: "Multiple locations & warehouses" },
+              { icon: Package, text: "Product variants & pricing" },
+              { icon: RefreshCw, text: "Automatic sync" },
+              { icon: CreditCard, text: "Built-in checkout & payments" },
             ].map((badge, index) => (
               <motion.span
                 key={badge.text}

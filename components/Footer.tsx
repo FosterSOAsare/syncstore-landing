@@ -130,12 +130,12 @@ export default function Footer() {
                   href="tel:+1234567890"
                   className="text-gray-600 hover:text-blue-600 transition-colors"
                 >
-                  +1 (234) 567-890
+                  +233 55 052 9015
                 </a>
               </li>
               <li className="text-gray-600 mt-4">
                 <p className="text-xs">Monday - Friday</p>
-                <p className="text-xs">9:00 AM - 6:00 PM EST</p>
+                <p className="text-xs">9:00 AM - 9:00 PM GMT</p>
               </li>
             </ul>
           </div>

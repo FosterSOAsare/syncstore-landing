@@ -18,47 +18,47 @@ export default function Features() {
     {
       icon: Package,
       title: "Product variants",
-      desc: "Sell products in multiple units (pieces, boxes, cartons, dozens) with the ability to convert between units and separate pricing per unit.",
+      desc: "Sell products in multiple units (pieces, boxes, cartons, dozens) with the ability to convert between units and separate pricing for each.",
     },
     {
       icon: Store,
-      title: "Multi-branch inventory",
-      desc: "Support stores, warehouses, and distribution centers with branch-specific pricing and stock levels.",
+      title: "Multiple locations",
+      desc: "Manage stores, warehouses, and distribution centers with location-specific pricing and stock levels.",
     },
     {
       icon: RefreshCw,
-      title: "Offline-first sync",
-      desc: "Work seamlessly offline with automatic background sync when connectivity returns.",
+      title: "Works offline",
+      desc: "Keep working even without internet. Everything syncs automatically when you're back online.",
     },
     {
       icon: ShoppingCart,
-      title: "Sales & POS",
+      title: "Sales & checkout",
       desc: "Fast checkout with customer management, payment tracking, receipts, and credit sales support.",
     },
     {
       icon: Boxes,
       title: "Restocks & suppliers",
-      desc: "Manage supplier relationships, create restock orders with approval workflows, and track costs.",
+      desc: "Manage supplier relationships, create restock orders with approval steps, and track costs.",
     },
     {
       icon: ArrowLeftRight,
-      title: "Stock requests & transfers",
-      desc: "Request stock between branches with priority levels, approval workflows, and fulfillment tracking.",
+      title: "Stock transfers",
+      desc: "Request and transfer stock between locations with priority levels and approval workflows.",
     },
     {
       icon: Tags,
-      title: "Categories & organization",
-      desc: "Organize products with categories, SKUs, and custom attributes for easy filtering and reporting.",
+      title: "Easy organization",
+      desc: "Organize products with categories and labels for easy filtering and reporting.",
     },
     {
       icon: Users,
-      title: "User & permissions",
-      desc: "Role-based access control with branch-level permissions for inventory, sales, and admin functions.",
+      title: "Team permissions",
+      desc: "Control what each team member can access and do in different locations.",
     },
     {
       icon: BarChart3,
-      title: "Reports & analytics",
-      desc: "Track sales trends, inventory movement, stock adjustments, and payment reconciliation across branches.",
+      title: "Reports & insights",
+      desc: "Track sales trends, stock movement, adjustments, and payments across all locations.",
     },
   ];
 
@@ -76,8 +76,8 @@ export default function Features() {
             Everything you need to manage inventory
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-            A complete inventory management system with multi-branch support,
-            product variants, offline sync, POS, and advanced workflows built
+            A complete inventory system with multiple location support, product
+            variants, offline capability, checkout, and smart workflows built
             for retail and distribution businesses.
           </p>
         </motion.div>
@@ -88,27 +88,34 @@ export default function Features() {
             return (
               <motion.div
                 key={f.title}
-                className="group p-6 bg-white rounded-xl border border-gray-200 transition-all duration-200 hover:border-blue-200 hover:shadow-md"
-                initial={{ opacity: 0, scale: 0.8, rotateX: -15 }}
-                whileInView={{ opacity: 1, scale: 1, rotateX: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                className="group p-6 bg-white rounded-xl border border-gray-200 hover:border-blue-200 hover:shadow-lg transition-all duration-300"
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{
-                  duration: 0.6,
-                  delay: index * 0.08,
-                  ease: [0.25, 0.4, 0.25, 1],
+                  duration: 0.4,
+                  delay: index * 0.05,
+                  ease: "easeOut",
                 }}
                 whileHover={{
                   y: -8,
-                  scale: 1.02,
-                  transition: { duration: 0.3, ease: "easeOut" },
+                  boxShadow:
+                    "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+                  transition: { duration: 0.15 },
                 }}
               >
                 <motion.div
-                  className="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg text-blue-600"
+                  className="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg text-blue-600 transition-colors group-hover:bg-blue-100"
                   whileHover={{
-                    rotate: [0, -10, 10, -10, 0],
-                    scale: [1, 1.1, 1.1, 1.1, 1],
-                    transition: { duration: 0.5 },
+                    scale: 1.1,
+                    rotate: 5,
+                    transition: { duration: 0.15 },
                   }}
                 >
                   <Icon className="w-6 h-6" aria-hidden="true" />

@@ -1,22 +1,26 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
-function useCountTo(target: number, duration = 1200) {
+function useCountTo(target: number, duration = 2000, shouldStart: boolean) {
   const [value, setValue] = React.useState(0);
 
   React.useEffect(() => {
+    if (!shouldStart) return;
+
     let raf = 0;
     const start = Date.now();
     const tick = () => {
       const now = Date.now();
       const progress = Math.min(1, (now - start) / duration);
-      setValue(Math.floor(progress * target));
+      // Use easing function for smoother animation
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      setValue(Math.floor(easeOutQuart * target));
       if (progress < 1) raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [target, duration]);
+  }, [target, duration, shouldStart]);
 
   return value;
 }
@@ -80,13 +84,15 @@ function MetricCard({
   value: number;
   suffix: string;
 }) {
-  const count = useCountTo(value);
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const count = useCountTo(value, 2000, isInView);
 
   const display =
     value >= 1000 ? `${Math.floor(count).toLocaleString()}` : `${count}`;
 
   return (
-    <div className="text-center py-4 md:py-0 first:pt-0 last:pb-0">
+    <div ref={ref} className="text-center py-4 md:py-0 first:pt-0 last:pb-0">
       <div className="text-3xl md:text-5xl font-bold text-gray-900 mb-2">
         {display}
         <span className="text-blue-600">{suffix}</span>

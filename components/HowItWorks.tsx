@@ -8,26 +8,26 @@ export default function HowItWorks() {
     {
       icon: UserPlus,
       step: "01",
-      title: "Request access",
-      desc: "Request a demo and our team will create your account with your branches, products, and team members configured.",
+      title: "Request a demo",
+      desc: "Request a demo and our team will set up your account with your locations, products, and team members.",
     },
     {
       icon: Settings,
       step: "02",
-      title: "Configure your system",
-      desc: "Set up product variants, categories, pricing per branch, and user permissions. Customize workflows to match your business.",
+      title: "Set up your business",
+      desc: "Set up product variants, categories, pricing for each location, and team permissions. Customize it to match how you work.",
     },
     {
       icon: Rocket,
       step: "03",
       title: "Start managing inventory",
-      desc: "Begin tracking stock, processing sales, managing restocks, and transferring inventory between branches—online or offline.",
+      desc: "Begin tracking stock, processing sales, ordering restocks, and moving inventory between locations—online or offline.",
     },
     {
       icon: TrendingUp,
       step: "04",
-      title: "Scale & optimize",
-      desc: "Use reports and analytics to identify trends, optimize stock levels, and make data-driven decisions across all locations.",
+      title: "Grow & improve",
+      desc: "Use reports and insights to spot trends, improve stock levels, and make better decisions across all locations.",
     },
   ];
 
@@ -46,7 +46,7 @@ export default function HowItWorks() {
             How it works
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            Get started in four simple steps. No complex setup, no long
+            Get started in four simple steps. No complicated setup, no lengthy
             training—just straightforward inventory management.
           </p>
         </motion.div>
