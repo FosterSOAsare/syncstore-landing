@@ -193,7 +193,7 @@ export default function Hero() {
           <img
             src="/screenshot.jpg"
             alt="SyncStore hero"
-            className="max-w-full h-auto rounded-xl shadow-xl"
+            className="max-w-full h-[250px] md:h-auto rounded-xl shadow-xl"
           />
         </motion.div>
       </div>

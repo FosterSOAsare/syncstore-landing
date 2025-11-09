@@ -113,10 +113,10 @@ export default function FAQ() {
         >
           <p className="text-gray-600 mb-4">Still have questions?</p>
           <a
-            href="/contact"
+            href="/demo"
             className="inline-flex items-center text-primary font-medium hover:text-primary"
           >
-            Contact our support team →
+            Request A Demo →
           </a>
         </motion.div>
       </div>
