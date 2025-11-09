@@ -70,7 +70,7 @@ export default function DemoContent() {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               See It in Action
             </h1>
-            <p className="text-xl text-primary/10">
+            <p className="text-xl text-white">
               Watch how SyncStore can help transform your business operations
             </p>
           </div>
