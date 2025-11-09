@@ -48,28 +48,28 @@ export default function TermsPage() {
                 </h2>
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex gap-2">
-                    <span className="text-blue-600 font-bold">•</span>
+                    <span className="text-primary font-bold">•</span>
                     <span>
                       You must provide accurate and complete information when
                       creating an account.
                     </span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="text-blue-600 font-bold">•</span>
+                    <span className="text-primary font-bold">•</span>
                     <span>
                       You are responsible for maintaining the security of your
                       account and password.
                     </span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="text-blue-600 font-bold">•</span>
+                    <span className="text-primary font-bold">•</span>
                     <span>
                       You are responsible for all activities that occur under
                       your account.
                     </span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="text-blue-600 font-bold">•</span>
+                    <span className="text-primary font-bold">•</span>
                     <span>
                       You may not use the Service for any illegal or
                       unauthorized purpose.
@@ -103,33 +103,33 @@ export default function TermsPage() {
                 </h2>
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex gap-2">
-                    <span className="text-blue-600 font-bold">•</span>
+                    <span className="text-primary font-bold">•</span>
                     <span>
                       A valid payment method is required for paid plans.
                     </span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="text-blue-600 font-bold">•</span>
+                    <span className="text-primary font-bold">•</span>
                     <span>
                       You will be billed in advance on a recurring basis
                       (monthly or annually).
                     </span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="text-blue-600 font-bold">•</span>
+                    <span className="text-primary font-bold">•</span>
                     <span>
                       All fees are non-refundable except as required by law.
                     </span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="text-blue-600 font-bold">•</span>
+                    <span className="text-primary font-bold">•</span>
                     <span>
                       We reserve the right to change our pricing with 30 days
                       notice.
                     </span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="text-blue-600 font-bold">•</span>
+                    <span className="text-primary font-bold">•</span>
                     <span>
                       Failure to pay may result in suspension or termination of
                       your account.
@@ -239,7 +239,7 @@ export default function TermsPage() {
                   at{" "}
                   <a
                     href="mailto:support@syncstore.com"
-                    className="text-blue-600 hover:text-blue-700 font-medium"
+                    className="text-primary hover:text-primary font-medium"
                   >
                     support@syncstore.com
                   </a>

@@ -96,7 +96,7 @@ export default function FAQContent() {
 
       {/* CTA Section */}
       <motion.section
-        className="py-16 bg-blue-50"
+        className="py-16 bg-primary/5"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -113,7 +113,7 @@ export default function FAQContent() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:support@syncstore.com"
-              className="inline-flex items-center justify-center px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary transition-colors"
             >
               Email Support
             </a>

@@ -49,7 +49,7 @@ export default function WhyChooseUs() {
                   transition={{ duration: 0.7, delay: 0.3 }}
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
-                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-12 h-full flex items-center justify-center shadow-sm border border-blue-100">
+                  <div className="bg-gradient-to-br from-primary/5 to-indigo-50 rounded-2xl p-8 md:p-12 h-full flex items-center justify-center shadow-sm border border-primary/10">
                     <div className="w-full h-64 md:h-80 flex items-center justify-center">
                       {sectionIndex === 0 && <OfflineIllustration />}
                       {sectionIndex === 1 && <MultiLocationIllustration />}
@@ -90,7 +90,7 @@ export default function WhyChooseUs() {
                         }}
                       >
                         <svg
-                          className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5"
+                          className="w-6 h-6 text-primary flex-shrink-0 mt-0.5"
                           fill="none"
                           strokeWidth={2.5}
                           stroke="currentColor"

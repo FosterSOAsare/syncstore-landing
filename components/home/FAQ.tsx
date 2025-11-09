@@ -114,7 +114,7 @@ export default function FAQ() {
           <p className="text-gray-600 mb-4">Still have questions?</p>
           <a
             href="/contact"
-            className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700"
+            className="inline-flex items-center text-primary font-medium hover:text-primary"
           >
             Contact our support team →
           </a>

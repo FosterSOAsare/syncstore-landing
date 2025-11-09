@@ -98,7 +98,7 @@ function MetricCard({
     >
       <div className="text-3xl md:text-5xl font-bold text-gray-900 mb-2">
         {display}
-        <span className="text-blue-600">{suffix}</span>
+        <span className="text-primary">{suffix}</span>
       </div>
       <div className="text-base text-gray-600">{label}</div>
     </div>

@@ -16,7 +16,7 @@ export default function PricingCTA() {
 
   return (
     <motion.section
-      className="py-20 bg-blue-50"
+      className="py-20 bg-primary/5"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
@@ -33,7 +33,7 @@ export default function PricingCTA() {
         <div className="mt-8">
           <a
             href="/demo"
-            className="inline-flex items-center px-12 py-4 bg-blue-600 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center px-12 py-4 bg-primary text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-primary transition-colors"
           >
             Request Demo
           </a>

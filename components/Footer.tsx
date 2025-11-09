@@ -27,28 +27,28 @@ export default function Footer() {
             <div className="flex gap-4">
               <a
                 href="#twitter"
-                className="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white transition-colors"
+                className="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter className="w-4 h-4" />
               </a>
               <a
                 href="#linkedin"
-                className="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white transition-colors"
+                className="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
               <a
                 href="#github"
-                className="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white transition-colors"
+                className="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="w-4 h-4" />
               </a>
               <a
                 href="#facebook"
-                className="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white transition-colors"
+                className="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="w-4 h-4" />
@@ -63,9 +63,9 @@ export default function Footer() {
               <li>
                 <a
                   href="/"
-                  className={`hover:text-blue-600 transition-colors ${
+                  className={`hover:text-primary transition-colors ${
                     isActive("/")
-                      ? "text-blue-600 font-semibold"
+                      ? "text-primary font-semibold"
                       : "text-gray-600"
                   }`}
                 >
@@ -75,9 +75,9 @@ export default function Footer() {
               <li>
                 <a
                   href="/pricing"
-                  className={`hover:text-blue-600 transition-colors ${
+                  className={`hover:text-primary transition-colors ${
                     isActive("/pricing")
-                      ? "text-blue-600 font-semibold"
+                      ? "text-primary font-semibold"
                       : "text-gray-600"
                   }`}
                 >
@@ -87,9 +87,9 @@ export default function Footer() {
               <li>
                 <a
                   href="/reviews"
-                  className={`hover:text-blue-600 transition-colors ${
+                  className={`hover:text-primary transition-colors ${
                     isActive("/reviews")
-                      ? "text-blue-600 font-semibold"
+                      ? "text-primary font-semibold"
                       : "text-gray-600"
                   }`}
                 >
@@ -99,9 +99,9 @@ export default function Footer() {
               <li>
                 <a
                   href="/faq"
-                  className={`hover:text-blue-600 transition-colors ${
+                  className={`hover:text-primary transition-colors ${
                     isActive("/faq")
-                      ? "text-blue-600 font-semibold"
+                      ? "text-primary font-semibold"
                       : "text-gray-600"
                   }`}
                 >
@@ -119,7 +119,7 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-gray-600" />
                 <a
                   href="mailto:support@syncstore.com"
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                  className="text-gray-600 hover:text-primary transition-colors"
                 >
                   support@syncstore.com
                 </a>
@@ -128,7 +128,7 @@ export default function Footer() {
                 <Phone className="w-4 h-4 text-gray-600" />
                 <a
                   href="tel:+1234567890"
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                  className="text-gray-600 hover:text-primary transition-colors"
                 >
                   +233 55 052 9015
                 </a>
@@ -150,9 +150,9 @@ export default function Footer() {
             <div className="text-sm">
               <a
                 href="/terms"
-                className={`hover:text-blue-600 transition-colors ${
+                className={`hover:text-primary transition-colors ${
                   isActive("/terms")
-                    ? "text-blue-600 font-semibold"
+                    ? "text-primary font-semibold"
                     : "text-gray-600"
                 }`}
               >

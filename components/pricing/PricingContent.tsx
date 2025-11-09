@@ -40,7 +40,7 @@ export default function PricingContent() {
               <motion.div
                 key={plan.name}
                 className={`relative bg-white rounded-2xl shadow-lg border-2 ${
-                  plan.popular ? "border-blue-600 shadow-xl" : "border-gray-200"
+                  plan.popular ? "border-primary shadow-xl" : "border-gray-200"
                 } p-8 flex flex-col hover:shadow-2xl transition-all duration-300`}
                 initial={{
                   opacity: 0,
@@ -65,7 +65,7 @@ export default function PricingContent() {
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
                       Most Popular
                     </span>
                   </div>
@@ -91,7 +91,7 @@ export default function PricingContent() {
                         key={feature}
                         className="flex items-start gap-3 text-left"
                       >
-                        <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-gray-700 text-left">
                           {feature}
                         </span>
@@ -124,7 +124,7 @@ export default function PricingContent() {
                   }
                   className={`mt-6 block text-center px-6 py-3 rounded-lg font-semibold transition-colors ${
                     plan.popular
-                      ? "bg-blue-600 text-white hover:bg-blue-700"
+                      ? "bg-primary text-white hover:bg-primary"
                       : "bg-gray-100 text-gray-900 hover:bg-gray-200"
                   }`}
                 >

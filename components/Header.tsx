@@ -28,7 +28,7 @@ export default function Header() {
             <a
               href="/"
               className={`hover:text-gray-900 ${
-                isActive("/") ? "text-blue-600 font-semibold" : ""
+                isActive("/") ? "text-primary font-semibold" : ""
               }`}
             >
               Home
@@ -36,7 +36,7 @@ export default function Header() {
             <a
               href="/pricing"
               className={`hover:text-gray-900 ${
-                isActive("/pricing") ? "text-blue-600 font-semibold" : ""
+                isActive("/pricing") ? "text-primary font-semibold" : ""
               }`}
             >
               Pricing
@@ -44,7 +44,7 @@ export default function Header() {
             <a
               href="/reviews"
               className={`hover:text-gray-900 ${
-                isActive("/reviews") ? "text-blue-600 font-semibold" : ""
+                isActive("/reviews") ? "text-primary font-semibold" : ""
               }`}
             >
               Reviews
@@ -52,7 +52,7 @@ export default function Header() {
             <a
               href="/faq"
               className={`hover:text-gray-900 ${
-                isActive("/faq") ? "text-blue-600 font-semibold" : ""
+                isActive("/faq") ? "text-primary font-semibold" : ""
               }`}
             >
               FAQ
@@ -62,7 +62,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <a
               href="/demo"
-              className="text-sm px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700"
+              className="text-sm px-4 py-2 bg-primary text-white rounded-md shadow hover:bg-primary"
             >
               Request Demo
             </a>
@@ -76,9 +76,7 @@ export default function Header() {
               <a
                 href="/"
                 className={`hover:text-gray-900 whitespace-nowrap ${
-                  isActive("/")
-                    ? "text-blue-600 font-semibold"
-                    : "text-gray-600"
+                  isActive("/") ? "text-primary font-semibold" : "text-gray-600"
                 }`}
               >
                 Home
@@ -88,7 +86,7 @@ export default function Header() {
                 href="/pricing"
                 className={`hover:text-gray-900 whitespace-nowrap ${
                   isActive("/pricing")
-                    ? "text-blue-600 font-semibold"
+                    ? "text-primary font-semibold"
                     : "text-gray-600"
                 }`}
               >
@@ -99,7 +97,7 @@ export default function Header() {
                 href="/reviews"
                 className={`hover:text-gray-900 whitespace-nowrap ${
                   isActive("/reviews")
-                    ? "text-blue-600 font-semibold"
+                    ? "text-primary font-semibold"
                     : "text-gray-600"
                 }`}
               >
@@ -110,7 +108,7 @@ export default function Header() {
                 href="/faq"
                 className={`hover:text-gray-900 whitespace-nowrap ${
                   isActive("/faq")
-                    ? "text-blue-600 font-semibold"
+                    ? "text-primary font-semibold"
                     : "text-gray-600"
                 }`}
               >

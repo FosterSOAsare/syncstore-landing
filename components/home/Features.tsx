@@ -88,7 +88,7 @@ export default function Features() {
             return (
               <motion.div
                 key={f.title}
-                className="group p-6 bg-white rounded-xl border border-gray-200 hover:border-blue-200 hover:shadow-lg transition-all duration-300"
+                className="group p-6 bg-white rounded-xl border border-gray-200 hover:border-primary/20 hover:shadow-lg transition-all duration-300"
                 initial={{
                   opacity: 0,
                   y: 20,
@@ -111,7 +111,7 @@ export default function Features() {
                 }}
               >
                 <motion.div
-                  className="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg text-blue-600 transition-colors group-hover:bg-blue-100"
+                  className="w-12 h-12 flex items-center justify-center bg-primary/5 rounded-lg text-primary transition-colors group-hover:bg-primary/10"
                   whileHover={{
                     scale: 1.1,
                     rotate: 5,

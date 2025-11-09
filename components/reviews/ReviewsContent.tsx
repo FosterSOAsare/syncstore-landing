@@ -29,7 +29,7 @@ export default function ReviewsContent() {
 
           {/* Rating Summary */}
           <motion.div
-            className="inline-flex flex-col items-center gap-2 bg-blue-50 px-8 py-6 rounded-xl"
+            className="inline-flex flex-col items-center gap-2 bg-primary/5 px-8 py-6 rounded-xl"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -107,7 +107,7 @@ export default function ReviewsContent() {
 
         {/* CTA Section */}
         <motion.div
-          className="mt-16 text-center bg-blue-50 rounded-2xl p-12"
+          className="mt-16 text-center bg-primary/5 rounded-2xl p-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -122,7 +122,7 @@ export default function ReviewsContent() {
           </p>
           <a
             href="/signin"
-            className="inline-flex items-center px-8 py-4 bg-blue-600 text-white text-base font-medium rounded-lg shadow-sm hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center px-8 py-4 bg-primary text-white text-base font-medium rounded-lg shadow-sm hover:bg-primary transition-colors"
           >
             Start for free
           </a>

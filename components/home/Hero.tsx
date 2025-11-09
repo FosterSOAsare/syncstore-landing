@@ -14,7 +14,7 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-white">
       {/* Floating icons */}
       <motion.div
-        className="absolute z-[15] hover:bg-primary text-blue-500 hover:text-white hover:cursor-pointer top-4 md:top-20 left-4 md:left-[8%] p-2 md:p-3 bg-white/80 backdrop-blur-sm rounded-lg shadow-sm"
+        className="absolute z-[15] hover:bg-primary text-primary/90 hover:text-white hover:cursor-pointer top-4 md:top-20 left-4 md:left-[8%] p-2 md:p-3 bg-white/80 backdrop-blur-sm rounded-lg shadow-sm"
         initial={{ opacity: 0, y: -20 }}
         animate={{
           opacity: 1,
@@ -28,7 +28,7 @@ export default function Hero() {
         <Package className="w-4 md:w-6 h-4 md:h-6" />
       </motion.div>
       <motion.div
-        className="absolute z-[15] hover:bg-primary text-blue-500 hover:text-white hover:cursor-pointer top-8 md:top-32 right-6 md:right-[15%] p-2 md:p-3 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm rotate-12"
+        className="absolute z-[15] hover:bg-primary text-primary/90 hover:text-white hover:cursor-pointer top-8 md:top-32 right-6 md:right-[15%] p-2 md:p-3 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm rotate-12"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{
           opacity: 1,
@@ -44,7 +44,7 @@ export default function Hero() {
         <Building2 className="w-4 md:w-6 h-4 md:h-6" />
       </motion.div>
       <motion.div
-        className="absolute z-[15] hover:bg-primary text-blue-500 hover:text-white hover:cursor-pointer top-55 md:top-80 left-8 md:left-[15%] p-2 md:p-3 bg-white/80 backdrop-blur-sm rounded-lg shadow-sm -rotate-12"
+        className="absolute z-[15] hover:bg-primary text-primary/90 hover:text-white hover:cursor-pointer top-55 md:top-80 left-8 md:left-[15%] p-2 md:p-3 bg-white/80 backdrop-blur-sm rounded-lg shadow-sm -rotate-12"
         initial={{ opacity: 0, x: -20 }}
         animate={{
           opacity: 1,
@@ -60,7 +60,7 @@ export default function Hero() {
         <WifiOff className="w-4 md:w-6 h-4 md:h-6" />
       </motion.div>
       <motion.div
-        className="absolute z-[15] hover:bg-primary text-blue-500 hover:text-white hover:cursor-pointer top-[45%] md:top-[40%] right-2 md:right-[2%] p-2 md:p-3 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm rotate-3"
+        className="absolute z-[15] hover:bg-primary text-primary/90 hover:text-white hover:cursor-pointer top-[45%] md:top-[40%] right-2 md:right-[2%] p-2 md:p-3 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm rotate-3"
         initial={{ opacity: 0, x: 20 }}
         animate={{
           opacity: 1,
@@ -77,7 +77,7 @@ export default function Hero() {
       </motion.div>
 
       <motion.div
-        className="absolute z-[15] hover:bg-primary text-blue-500 hover:text-white hover:cursor-pointer top-[17%] md:top-[25%] right-4 md:right-[15%] p-2 md:p-3 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm rotate-6"
+        className="absolute z-[15] hover:bg-primary text-primary/90 hover:text-white hover:cursor-pointer top-[17%] md:top-[25%] right-4 md:right-[15%] p-2 md:p-3 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm rotate-6"
         initial={{ opacity: 0, y: -20 }}
         animate={{
           opacity: 1,
@@ -96,7 +96,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-6 py-16 lg:py-24 flex flex-col justify-center items-center gap-16 relative z-10">
         <div className="w-full flex flex-col items-center text-center">
           <motion.div
-            className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-6"
+            className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -138,7 +138,7 @@ export default function Hero() {
             ].map((badge, index) => (
               <motion.span
                 key={badge.text}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full cursor-pointer hover:bg-blue-50 hover:border-blue-200 transition-all"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full cursor-pointer hover:bg-primary/5 hover:border-primary/20 transition-all"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: 0.5 + index * 0.1 }}
@@ -157,7 +157,7 @@ export default function Hero() {
           >
             <a
               href="/demo"
-              className="inline-flex items-center justify-center px-14 py-4 bg-blue-600 text-white text-base font-medium rounded-lg shadow-sm hover:bg-blue-700 transition-colors w-full sm:w-auto"
+              className="inline-flex items-center justify-center px-14 py-4 bg-primary text-white text-base font-medium rounded-lg shadow-sm hover:bg-primary transition-colors w-full sm:w-auto"
             >
               Request Demo
             </a>

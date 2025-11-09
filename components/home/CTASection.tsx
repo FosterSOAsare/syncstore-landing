@@ -35,7 +35,7 @@ export default function CTASection() {
         >
           <a
             href="/demo"
-            className="inline-flex items-center px-16 py-4 bg-blue-600 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center px-16 py-4 bg-primary text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-primary transition-colors"
           >
             Request Demo
           </a>

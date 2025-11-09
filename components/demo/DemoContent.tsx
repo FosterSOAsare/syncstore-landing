@@ -60,7 +60,7 @@ export default function DemoContent() {
     <>
       {/* Hero Section */}
       <motion.section
-        className="bg-gradient-to-br from-blue-600 to-blue-700 text-white py-16"
+        className="bg-gradient-to-br from-primary to-primary text-white py-16"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -70,7 +70,7 @@ export default function DemoContent() {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               See It in Action
             </h1>
-            <p className="text-xl text-blue-100">
+            <p className="text-xl text-primary/10">
               Watch how SyncStore can help transform your business operations
             </p>
           </div>
@@ -104,8 +104,8 @@ export default function DemoContent() {
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <Calendar className="w-6 h-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <Calendar className="w-6 h-6 text-primary" />
                     </div>
                   </div>
                   <div>
@@ -121,8 +121,8 @@ export default function DemoContent() {
 
                 <div className="flex gap-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <Users className="w-6 h-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <Users className="w-6 h-6 text-primary" />
                     </div>
                   </div>
                   <div>
@@ -138,8 +138,8 @@ export default function DemoContent() {
 
                 <div className="flex gap-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <Zap className="w-6 h-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <Zap className="w-6 h-6 text-primary" />
                     </div>
                   </div>
                   <div>
@@ -156,7 +156,7 @@ export default function DemoContent() {
               </div>
 
               {/* Next Steps */}
-              <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
+              <div className="bg-primary/5 rounded-xl p-6 border border-primary/10">
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   After the Demo
                 </h3>
@@ -166,26 +166,26 @@ export default function DemoContent() {
                 </p>
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
+                    <span className="text-primary mt-1">•</span>
                     <span>
                       Discuss pricing plans that fit your business size and
                       needs
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
+                    <span className="text-primary mt-1">•</span>
                     <span>
                       Create and set up your account with your business details
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
+                    <span className="text-primary mt-1">•</span>
                     <span>
                       Add your existing products and set up your locations
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">•</span>
+                    <span className="text-primary mt-1">•</span>
                     <span>Train your team to get everyone up to speed</span>
                   </li>
                 </ul>
@@ -199,14 +199,14 @@ export default function DemoContent() {
                 <div className="space-y-3">
                   <a
                     href="mailto:support@syncstore.com"
-                    className="flex items-center gap-3 text-gray-600 hover:text-blue-600 transition-colors"
+                    className="flex items-center gap-3 text-gray-600 hover:text-primary transition-colors"
                   >
                     <Mail className="w-5 h-5" />
                     <span>support@syncstore.com</span>
                   </a>
                   <a
                     href="tel:+233550529015"
-                    className="flex items-center gap-3 text-gray-600 hover:text-blue-600 transition-colors"
+                    className="flex items-center gap-3 text-gray-600 hover:text-primary transition-colors"
                   >
                     <Phone className="w-5 h-5" />
                     <span>+233 55 052 9015</span>
@@ -258,7 +258,7 @@ export default function DemoContent() {
                       value={formData.fullName}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
                       placeholder="John Doe"
                     />
                   </div>
@@ -277,7 +277,7 @@ export default function DemoContent() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
                       placeholder="john@company.com"
                     />
                   </div>
@@ -296,7 +296,7 @@ export default function DemoContent() {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
                       placeholder="+233 55 052 9015"
                     />
                   </div>
@@ -315,7 +315,7 @@ export default function DemoContent() {
                       value={formData.company}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
                       placeholder="Your Company Ltd."
                     />
                   </div>
@@ -334,7 +334,7 @@ export default function DemoContent() {
                       value={formData.role}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
                       placeholder="e.g., Owner, Manager, IT Director"
                     />
                   </div>
@@ -352,7 +352,7 @@ export default function DemoContent() {
                       value={formData.businessType}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none bg-white"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none bg-white"
                     >
                       <option value="">Select your business type</option>
                       <option value="retail">Retail Store</option>
@@ -380,7 +380,7 @@ export default function DemoContent() {
                       value={formData.numberOfBranches}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none bg-white"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none bg-white"
                     >
                       <option value="">Select number of locations</option>
                       <option value="1">1 location</option>
@@ -404,7 +404,7 @@ export default function DemoContent() {
                       value={formData.message}
                       onChange={handleChange}
                       rows={4}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none resize-none"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none resize-none"
                       placeholder="Tell us about your specific needs or any questions you have..."
                     />
                   </div>
@@ -412,14 +412,14 @@ export default function DemoContent() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
+                    className="w-full px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow hover:bg-primary transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? "Submitting..." : "Request Demo"}
                   </button>
 
                   <p className="text-sm text-gray-500 text-center">
                     By submitting this form, you agree to our{" "}
-                    <a href="/terms" className="text-blue-600 hover:underline">
+                    <a href="/terms" className="text-primary hover:underline">
                       Terms of Service
                     </a>
                   </p>

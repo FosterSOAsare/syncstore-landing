@@ -66,12 +66,12 @@ export default function HowItWorks() {
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
               >
                 {/* Step number */}
-                <div className="text-6xl font-bold text-blue-50 mb-4">
+                <div className="text-6xl font-bold text-primary/20 mb-4">
                   {step.step}
                 </div>
 
                 {/* Icon */}
-                <div className="w-14 h-14 flex items-center justify-center bg-blue-600 rounded-xl text-white mb-6 shadow-md">
+                <div className="w-14 h-14 flex items-center justify-center bg-primary rounded-xl text-white mb-6 shadow-md">
                   <Icon className="w-7 h-7" />
                 </div>
 
@@ -95,7 +95,7 @@ export default function HowItWorks() {
         >
           <a
             href="/demo"
-            className="inline-flex items-center px-8 py-3 bg-blue-600 text-white font-medium rounded-lg shadow-sm hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center px-8 py-3 bg-primary text-white font-medium rounded-lg shadow-sm hover:bg-primary transition-colors"
           >
             Request Demo
           </a>
