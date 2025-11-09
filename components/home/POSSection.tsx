@@ -1,6 +1,6 @@
 "use client";
 
-import WHY_CHOOSE_US_SECTIONS from "../data/posSections";
+import WHY_CHOOSE_US_SECTIONS from "@/data/posSections";
 import { motion } from "framer-motion";
 
 export default function WhyChooseUs() {

@@ -92,7 +92,7 @@ function MetricCard({
     value >= 1000 ? `${Math.floor(count).toLocaleString()}` : `${count}`;
 
   return (
-    <div ref={ref} className="text-center py-4 md:py-0 first:pt-0 last:pb-0">
+    <div ref={ref} className="text-center py-6 md:py-0 first:pt-0 last:pb-0">
       <div className="text-3xl md:text-5xl font-bold text-gray-900 mb-2">
         {display}
         <span className="text-blue-600">{suffix}</span>
