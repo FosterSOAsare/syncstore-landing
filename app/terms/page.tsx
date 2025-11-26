@@ -238,10 +238,10 @@ export default function TermsPage() {
                   If you have any questions about these Terms, please contact us
                   at{" "}
                   <a
-                    href="mailto:support@syncstore.com"
+                    href="mailto:fostersoasare@gmail.com"
                     className="text-primary hover:text-primary font-medium"
                   >
-                    support@syncstore.com
+                    fostersoasare@gmail.com
                   </a>
                 </p>
               </div>

@@ -163,7 +163,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="mailto:support@syncstore.com"
+              href="mailto:fostersoasare@gmail.com"
               className="inline-flex items-center justify-center px-14 py-4 bg-white border-2 border-gray-200 text-gray-900 text-base font-medium rounded-lg hover:bg-gray-50 transition-colors w-full sm:w-auto"
             >
               Contact Sales

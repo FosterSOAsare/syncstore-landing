@@ -118,10 +118,10 @@ export default function Footer() {
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-gray-600" />
                 <a
-                  href="mailto:support@syncstore.com"
+                  href="mailto:fostersoasare@gmail.com"
                   className="text-gray-600 hover:text-primary transition-colors"
                 >
-                  support@syncstore.com
+                  fostersoasare@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2">

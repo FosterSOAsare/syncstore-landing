@@ -112,7 +112,7 @@ export default function FAQContent() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:support@syncstore.com"
+              href="mailto:fostersoasare@gmail.com"
               className="inline-flex items-center justify-center px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary transition-colors"
             >
               Email Support
