@@ -46,9 +46,9 @@ export default function Metrics() {
 
   return (
     <section className="bg-white border-y border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 py-4 md:py-16">
+      <div className="max-w-7xl mx-auto px-6 py-12 md:py-16">
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-12 divide-y md:divide-y-0 md:divide-x divide-gray-100"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 divide-y md:divide-y-0 md:divide-x divide-gray-100"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -61,6 +61,7 @@ export default function Metrics() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="pt-8 md:pt-0 first:pt-0"
             >
               <MetricCard
                 label={it.label}
@@ -94,13 +95,17 @@ function MetricCard({
   return (
     <div
       ref={ref}
-      className="text-center py-6 flex items-center justify-center flex-col  md:py-0"
+      className="flex flex-col md:flex-col items-center justify-center px-4"
     >
-      <div className="text-3xl md:text-5xl font-bold text-gray-900 mb-2">
-        {display}
-        <span className="text-primary">{suffix}</span>
+      <div className="flex flex-col md:flex-col items-center md:justify-center w-full">
+        <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 md:mb-2 whitespace-nowrap">
+          {display}
+          <span className="text-primary">{suffix}</span>
+        </div>
+        <div className="text-base md:text-lg text-gray-600 font-medium text-center leading-tight">
+          {label}
+        </div>
       </div>
-      <div className="text-base text-gray-600">{label}</div>
     </div>
   );
 }

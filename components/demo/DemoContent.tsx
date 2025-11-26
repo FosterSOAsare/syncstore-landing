@@ -67,10 +67,10 @@ export default function DemoContent() {
   return (
     <div className="min-h-screen bg-white lg:flex">
       {/* Left Side - Value Proposition */}
-      <div className="lg:w-1/2 bg-gray-900 text-white p-6 md:p-12 lg:p-20 relative overflow-hidden flex flex-col justify-between">
+      <div className="lg:w-1/2 bg-white text-gray-900 p-6 md:p-12 lg:p-20 relative overflow-hidden flex flex-col justify-between border-r border-gray-100">
         {/* Background Effects */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
 
         <div className="relative z-10">
           <motion.div
@@ -78,17 +78,17 @@ export default function DemoContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full text-sm font-medium mb-8 border border-white/10">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-50 rounded-full text-sm font-medium mb-8 border border-green-100 text-green-700">
+              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
               Live Demo Session
             </div>
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900">
               See SyncStore <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-accent-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
                 in Action
               </span>
             </h1>
-            <p className="text-xl text-gray-400 max-w-lg mb-12 leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-lg mb-12 leading-relaxed">
               Book a personalized walkthrough with our product experts. See how
               we can help you manage inventory, track sales, and grow your
               business offline and online.
@@ -119,14 +119,14 @@ export default function DemoContent() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
                 >
-                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-6 h-6 text-primary-400" />
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-1">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">
                       {item.title}
                     </h3>
-                    <p className="text-gray-400">{item.desc}</p>
+                    <p className="text-gray-600">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -136,7 +136,7 @@ export default function DemoContent() {
 
         {/* Testimonial */}
         <motion.div
-          className="relative z-10 mt-12 pt-12 border-t border-white/10"
+          className="relative z-10 mt-12 pt-12 border-t border-gray-100"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
@@ -149,12 +149,12 @@ export default function DemoContent() {
               />
             ))}
           </div>
-          <p className="text-lg text-gray-300 italic mb-4">
+          <p className="text-lg text-gray-700 italic mb-4">
             "The demo convinced us immediately. The offline sync feature is
             exactly what we needed for our 5 locations."
           </p>
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gray-700 overflow-hidden relative">
+            <div className="w-10 h-10 rounded-full bg-gray-100 overflow-hidden relative">
               <Image
                 src="/testimonials/kwame.png"
                 alt="Kwame Mensah"
@@ -163,7 +163,7 @@ export default function DemoContent() {
               />
             </div>
             <div>
-              <p className="font-semibold text-white">Kwame Mensah</p>
+              <p className="font-semibold text-gray-900">Kwame Mensah</p>
               <p className="text-sm text-gray-500">Manager, Accra Retail Hub</p>
             </div>
           </div>
