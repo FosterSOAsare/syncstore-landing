@@ -1,11 +1,26 @@
 "use client";
 
-import { UserPlus, Settings, Rocket, TrendingUp, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import {
+  UserPlus,
+  Settings,
+  Rocket,
+  TrendingUp,
+  ArrowRight,
+  type LucideIcon,
+} from "lucide-react";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { MouseEvent } from "react";
 
+interface Step {
+  icon: LucideIcon;
+  step: string;
+  title: string;
+  desc: string;
+}
+
 export default function HowItWorks() {
-  const steps = [
+  const steps: Step[] = [
     {
       icon: UserPlus,
       step: "01",
@@ -37,7 +52,7 @@ export default function HowItWorks() {
       {/* Ambient Background Glows */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[128px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[128px] pointer-events-none" />
-      
+
       {/* Grid Pattern Overlay */}
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.02] pointer-events-none" />
 
@@ -62,15 +77,16 @@ export default function HowItWorks() {
                 <span className="text-gray-600">to success.</span>
               </h2>
               <p className="text-lg text-gray-400 mb-8 leading-relaxed font-light">
-                We've stripped away the complexity. No long training manuals, no
-                complicated installations. Just a powerful system that works.
+                We&apos;ve stripped away the complexity. No long training
+                manuals, no complicated installations. Just a powerful system
+                that works.
               </p>
-              <a
+              <Link
                 href="/demo"
                 className="inline-flex items-center gap-2 text-white font-bold hover:gap-4 transition-all group"
               >
                 Start your journey <ArrowRight className="w-5 h-5 text-primary" />
-              </a>
+              </Link>
             </motion.div>
           </div>
 
@@ -86,7 +102,7 @@ export default function HowItWorks() {
   );
 }
 
-function SpotlightCard({ step, index }: { step: any; index: number }) {
+function SpotlightCard({ step, index }: { step: Step; index: number }) {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -118,7 +134,7 @@ function SpotlightCard({ step, index }: { step: any; index: number }) {
           `,
         }}
       />
-      
+
       <div className="relative h-full p-8 flex flex-col">
         <div className="flex justify-between items-start mb-8">
           <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:border-primary/50 group-hover:text-white transition-all duration-300 shadow-lg">

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { AlertTriangle } from "lucide-react";
@@ -16,23 +17,23 @@ export default function NotFound() {
             </h2>
           </div>
           <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-            Oops! The page you're looking for seems to have wandered off. Don't
-            worry, let's get you back on track.
+            Oops! The page you&apos;re looking for seems to have wandered off.
+            Don&apos;t worry, let&apos;s get you back on track.
           </p>
           <div className="space-y-4">
-            <a
+            <Link
               href="/"
               className="inline-block bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-primary-hover transition-colors shadow-lg hover:shadow-xl"
             >
               Go Back Home
-            </a>
+            </Link>
             <div>
-              <a
+              <Link
                 href="/contact"
                 className="text-primary hover:text-primary-hover font-medium transition-colors"
               >
                 Contact Support →
-              </a>
+              </Link>
             </div>
           </div>
         </div>

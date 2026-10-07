@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Twitter, Linkedin, Github, Facebook, Mail, Phone } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -61,7 +62,7 @@ export default function Footer() {
             <h4 className="text-gray-900 text-sm font-bold mb-4">Product</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <a
+                <Link
                   href="/"
                   className={`hover:text-primary transition-colors ${
                     isActive("/")
@@ -70,10 +71,10 @@ export default function Footer() {
                   }`}
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/pricing"
                   className={`hover:text-primary transition-colors ${
                     isActive("/pricing")
@@ -82,10 +83,10 @@ export default function Footer() {
                   }`}
                 >
                   Pricing
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/reviews"
                   className={`hover:text-primary transition-colors ${
                     isActive("/reviews")
@@ -94,10 +95,10 @@ export default function Footer() {
                   }`}
                 >
                   Reviews
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/faq"
                   className={`hover:text-primary transition-colors ${
                     isActive("/faq")
@@ -106,7 +107,19 @@ export default function Footer() {
                   }`}
                 >
                   FAQ
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className={`hover:text-primary transition-colors ${
+                    isActive("/contact")
+                      ? "text-primary font-semibold"
+                      : "text-gray-600"
+                  }`}
+                >
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>
@@ -147,8 +160,8 @@ export default function Footer() {
             <p className="text-sm text-gray-600">
               © {new Date().getFullYear()} SyncStore. All rights reserved.
             </p>
-            <div className="text-sm">
-              <a
+            <div className="text-sm flex gap-6">
+              <Link
                 href="/terms"
                 className={`hover:text-primary transition-colors ${
                   isActive("/terms")
@@ -157,7 +170,17 @@ export default function Footer() {
                 }`}
               >
                 Terms of Service
-              </a>
+              </Link>
+              <Link
+                href="/privacy"
+                className={`hover:text-primary transition-colors ${
+                  isActive("/privacy")
+                    ? "text-primary font-semibold"
+                    : "text-gray-600"
+                }`}
+              >
+                Privacy Policy
+              </Link>
             </div>
           </div>
         </div>

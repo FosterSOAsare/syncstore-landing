@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   WifiOff,
   Building2,
@@ -8,6 +9,7 @@ import {
   CreditCard,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { SIGN_UP_URL } from "@/lib/site";
 
 export default function Hero() {
   return (
@@ -120,7 +122,8 @@ export default function Hero() {
             Manage inventory, sales, and operations with confidence — even
             without internet. Works perfectly offline to keep your business
             running smoothly across stores, warehouses, and distribution
-            centers. Everything syncs automatically when you're back online.
+            centers. Everything syncs automatically when you&apos;re back
+            online.
           </motion.p>
 
           <motion.div
@@ -155,12 +158,12 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <a
+            <Link
               href="/demo"
               className="inline-flex items-center justify-center px-14 py-4 bg-primary text-white text-base font-medium rounded-lg shadow-sm hover:bg-primary transition-colors w-full sm:w-auto"
             >
               Request Demo
-            </a>
+            </Link>
 
             <a
               href="mailto:fostersoasare@gmail.com"
@@ -176,7 +179,13 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 1 }}
           >
-            Free for 6 months • Setup by our team
+            Free for 6 months • Setup by our team • Or{" "}
+            <a
+              href={SIGN_UP_URL}
+              className="text-primary font-medium hover:underline"
+            >
+              create your account
+            </a>
           </motion.p>
         </div>
 

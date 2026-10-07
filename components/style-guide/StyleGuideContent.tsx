@@ -723,7 +723,7 @@ export default function StyleGuideContent() {
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Spacing</h2>
           <p className="text-lg text-gray-600 mb-12">
             Consistent spacing creates visual rhythm and hierarchy. We use
-            Tailwind's spacing scale based on 4px increments.
+            Tailwind&apos;s spacing scale based on 4px increments.
           </p>
 
           <div className="bg-white border border-gray-200 rounded-xl p-8">

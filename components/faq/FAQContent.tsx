@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import categories from "@/data/faq";
@@ -107,8 +108,8 @@ export default function FAQContent() {
             Still have questions?
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Our team is here to help. Reach out and we'll get back to you within
-            24 hours.
+            Our team is here to help. Reach out and we&apos;ll get back to you
+            within 24 hours.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -117,12 +118,12 @@ export default function FAQContent() {
             >
               Email Support
             </a>
-            <a
+            <Link
               href="/demo"
               className="inline-flex items-center justify-center px-8 py-3 bg-white border-2 border-gray-200 text-gray-900 font-semibold rounded-lg hover:bg-gray-50 transition-colors"
             >
               Request Demo
-            </a>
+            </Link>
           </div>
         </div>
       </motion.section>

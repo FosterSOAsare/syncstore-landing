@@ -1,9 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { Star, Quote, CheckCircle2, TrendingUp, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import reviews from "@/data/reviews";
+import { SIGN_UP_URL } from "@/lib/site";
 
 export default function ReviewsContent() {
   // Calculate average rating
@@ -130,7 +132,7 @@ export default function ReviewsContent() {
 
                 {/* Review Text */}
                 <p className="text-gray-600 leading-relaxed mb-6 relative z-10">
-                  "{review.review}"
+                  &ldquo;{review.review}&rdquo;
                 </p>
 
                 {/* Footer */}
@@ -158,17 +160,17 @@ export default function ReviewsContent() {
           </h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="/demo"
+              href={SIGN_UP_URL}
               className="px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-primary-hover hover:shadow-xl transition-all w-full sm:w-auto"
             >
               Start Free Trial
             </a>
-            <a
+            <Link
               href="/pricing"
               className="px-8 py-4 bg-white text-gray-700 font-bold rounded-xl border border-gray-200 hover:bg-gray-50 transition-all w-full sm:w-auto"
             >
               View Pricing
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>

@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description:
+    "The terms that govern your use of SyncStore's inventory management service, website and apps.",
+  alternates: { canonical: "/terms" },
+};
 
 export default function TermsPage() {
   return (
@@ -28,10 +36,10 @@ export default function TermsPage() {
                   1. Introduction
                 </h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Welcome to SyncStore. These Terms of Service ("Terms") govern
-                  your access to and use of SyncStore's inventory management
+                  Welcome to SyncStore. These Terms of Service (&ldquo;Terms&rdquo;) govern
+                  your access to and use of SyncStore&apos;s inventory management
                   services, website, and applications (collectively, the
-                  "Service"). By accessing or using our Service, you agree to be
+                  &ldquo;Service&rdquo;). By accessing or using our Service, you agree to be
                   bound by these Terms.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
@@ -203,7 +211,7 @@ export default function TermsPage() {
                   8. Limitation of Liability
                 </h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  The Service is provided "as is" without warranties of any
+                  The Service is provided &ldquo;as is&rdquo; without warranties of any
                   kind, either express or implied. We do not warrant that the
                   Service will be uninterrupted, error-free, or completely
                   secure.

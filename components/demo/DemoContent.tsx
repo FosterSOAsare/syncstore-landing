@@ -1,33 +1,39 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import {
   Calendar,
   Users,
   Zap,
   CheckCircle2,
+  AlertCircle,
   ArrowRight,
   Star,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { BRANCH_COUNTS, BUSINESS_TYPES } from "@/lib/demoRequest";
+
+const emptyForm = {
+  fullName: "",
+  email: "",
+  phone: "",
+  company: "",
+  role: "",
+  businessType: "",
+  numberOfBranches: "",
+  message: "",
+};
 
 export default function DemoContent() {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    company: "",
-    role: "",
-    businessType: "",
-    numberOfBranches: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState(emptyForm);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "success" | "error"
   >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -40,28 +46,46 @@ export default function DemoContent() {
     });
   };
 
+  // Sends the request to our API route, which saves it on the server
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus("idle");
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-      setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        company: "",
-        role: "",
-        businessType: "",
-        numberOfBranches: "",
-        message: "",
+    try {
+      const response = await fetch("/api/demo-requests", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          businessType: formData.businessType,
+          numberOfBranches: formData.numberOfBranches,
+          message: formData.message,
+        }),
       });
 
-      // Reset success message after 5 seconds
-      setTimeout(() => setSubmitStatus("idle"), 5000);
-    }, 1000);
+      if (!response.ok) {
+        const error = await response.json().catch(() => ({}));
+        throw new Error(
+          error.message || "We couldn't send your request. Please try again."
+        );
+      }
+
+      setSubmitStatus("success");
+      setFormData(emptyForm);
+    } catch (error) {
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "We couldn't send your request. Please try again."
+      );
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -150,8 +174,8 @@ export default function DemoContent() {
             ))}
           </div>
           <p className="text-lg text-gray-700 italic mb-4">
-            "The demo convinced us immediately. The offline sync feature is
-            exactly what we needed for our 5 locations."
+            &ldquo;The demo convinced us immediately. The offline sync feature
+            is exactly what we needed for our 5 locations.&rdquo;
           </p>
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-gray-100 overflow-hidden relative">
@@ -182,7 +206,7 @@ export default function DemoContent() {
               Schedule Your Demo
             </h2>
             <p className="text-gray-600 mb-8">
-              Fill out the form below and we'll be in touch shortly.
+              Fill out the form below and we&apos;ll be in touch shortly.
             </p>
 
             {submitStatus === "success" && (
@@ -190,6 +214,7 @@ export default function DemoContent() {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
                 className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-start gap-3"
+                role="status"
               >
                 <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
                 <div>
@@ -197,8 +222,26 @@ export default function DemoContent() {
                     Request Received!
                   </h4>
                   <p className="text-sm text-green-700">
-                    Check your email for a calendar link to book your slot.
+                    Thanks! Our team will contact you shortly to book a time
+                    that suits you.
                   </p>
+                </div>
+              </motion.div>
+            )}
+
+            {submitStatus === "error" && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start gap-3"
+                role="alert"
+              >
+                <AlertCircle className="w-5 h-5 text-red-600 mt-0.5" />
+                <div>
+                  <h4 className="font-semibold text-red-900">
+                    Something went wrong
+                  </h4>
+                  <p className="text-sm text-red-700">{errorMessage}</p>
                 </div>
               </motion.div>
             )}
@@ -219,6 +262,7 @@ export default function DemoContent() {
                     value={formData.fullName}
                     onChange={handleChange}
                     required
+                    maxLength={120}
                     className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
                     placeholder="John Doe"
                   />
@@ -237,6 +281,7 @@ export default function DemoContent() {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    maxLength={254}
                     className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
                     placeholder="john@company.com"
                   />
@@ -258,6 +303,7 @@ export default function DemoContent() {
                     value={formData.phone}
                     onChange={handleChange}
                     required
+                    maxLength={40}
                     className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
                     placeholder="+233..."
                   />
@@ -276,6 +322,7 @@ export default function DemoContent() {
                     value={formData.company}
                     onChange={handleChange}
                     required
+                    maxLength={160}
                     className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
                     placeholder="Company Ltd."
                   />
@@ -298,12 +345,11 @@ export default function DemoContent() {
                   className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
                 >
                   <option value="">Select your business type</option>
-                  <option value="retail">Retail Store</option>
-                  <option value="wholesale">Wholesale/Distribution</option>
-                  <option value="pharmacy">Pharmacy</option>
-                  <option value="restaurant">Restaurant/Food Service</option>
-                  <option value="ecommerce">E-commerce</option>
-                  <option value="other">Other</option>
+                  {BUSINESS_TYPES.map((type) => (
+                    <option key={type.value} value={type.value}>
+                      {type.label}
+                    </option>
+                  ))}
                 </select>
               </div>
 
@@ -315,7 +361,7 @@ export default function DemoContent() {
                   Number of Locations
                 </label>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                  {["1", "2-5", "6-10", "11-20", "20+"].map((option) => (
+                  {BRANCH_COUNTS.map((option) => (
                     <button
                       key={option}
                       type="button"
@@ -339,7 +385,7 @@ export default function DemoContent() {
                   htmlFor="message"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Anything specific you'd like to see?
+                  Anything specific you&apos;d like to see?
                 </label>
                 <textarea
                   id="message"
@@ -347,6 +393,7 @@ export default function DemoContent() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={3}
+                  maxLength={2000}
                   className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none"
                   placeholder="Tell us about your challenges..."
                 />
@@ -369,13 +416,13 @@ export default function DemoContent() {
 
               <p className="text-xs text-center text-gray-500 mt-4">
                 By submitting, you agree to our{" "}
-                <a href="/terms" className="text-primary hover:underline">
+                <Link href="/terms" className="text-primary hover:underline">
                   Terms of Service
-                </a>{" "}
+                </Link>{" "}
                 and{" "}
-                <a href="/privacy" className="text-primary hover:underline">
+                <Link href="/privacy" className="text-primary hover:underline">
                   Privacy Policy
-                </a>
+                </Link>
                 .
               </p>
             </form>

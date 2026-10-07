@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { PackagePlus } from "lucide-react";
+import { SIGN_IN_URL, SIGN_UP_URL } from "@/lib/site";
 
 export default function Header() {
   const pathname = usePathname();
@@ -17,55 +19,68 @@ export default function Header() {
     <>
       <header className="w-full bg-white sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <PackagePlus className="w-8 h-8 text-primary" />
             <span className="font-semibold text-lg text-primary">
               SyncStore
             </span>
-          </a>
+          </Link>
 
           <nav className="hidden md:flex items-center gap-6 text-sm text-gray-600">
-            <a
+            <Link
               href="/"
               className={`hover:text-gray-900 ${
                 isActive("/") ? "text-primary font-semibold" : ""
               }`}
             >
               Home
-            </a>
-            <a
+            </Link>
+            <Link
               href="/pricing"
               className={`hover:text-gray-900 ${
                 isActive("/pricing") ? "text-primary font-semibold" : ""
               }`}
             >
               Pricing
-            </a>
-            <a
+            </Link>
+            <Link
               href="/reviews"
               className={`hover:text-gray-900 ${
                 isActive("/reviews") ? "text-primary font-semibold" : ""
               }`}
             >
               Reviews
-            </a>
-            <a
+            </Link>
+            <Link
               href="/faq"
               className={`hover:text-gray-900 ${
                 isActive("/faq") ? "text-primary font-semibold" : ""
               }`}
             >
               FAQ
-            </a>
+            </Link>
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Sign in / sign up live in the onboarding app */}
             <a
+              href={SIGN_IN_URL}
+              className="text-sm px-3 py-2 text-gray-700 hover:text-gray-900 font-medium"
+            >
+              Sign in
+            </a>
+            <a
+              href={SIGN_UP_URL}
+              className="hidden sm:inline-block text-sm px-4 py-2 border border-primary text-primary rounded-md hover:bg-primary/5 font-medium"
+            >
+              Get started
+            </a>
+            <Link
               href="/demo"
               className="text-sm px-4 py-2 bg-primary text-white rounded-md shadow hover:bg-primary"
             >
               Request Demo
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -73,16 +88,16 @@ export default function Header() {
         <div className="md:hidden border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-6 py-3">
             <nav className="flex items-center gap-4 text-sm overflow-x-auto">
-              <a
+              <Link
                 href="/"
                 className={`hover:text-gray-900 whitespace-nowrap ${
                   isActive("/") ? "text-primary font-semibold" : "text-gray-600"
                 }`}
               >
                 Home
-              </a>
+              </Link>
               <span className="text-gray-300">|</span>
-              <a
+              <Link
                 href="/pricing"
                 className={`hover:text-gray-900 whitespace-nowrap ${
                   isActive("/pricing")
@@ -91,9 +106,9 @@ export default function Header() {
                 }`}
               >
                 Pricing
-              </a>
+              </Link>
               <span className="text-gray-300">|</span>
-              <a
+              <Link
                 href="/reviews"
                 className={`hover:text-gray-900 whitespace-nowrap ${
                   isActive("/reviews")
@@ -102,9 +117,9 @@ export default function Header() {
                 }`}
               >
                 Reviews
-              </a>
+              </Link>
               <span className="text-gray-300">|</span>
-              <a
+              <Link
                 href="/faq"
                 className={`hover:text-gray-900 whitespace-nowrap ${
                   isActive("/faq")
@@ -113,6 +128,13 @@ export default function Header() {
                 }`}
               >
                 FAQ
+              </Link>
+              <span className="text-gray-300 sm:hidden">|</span>
+              <a
+                href={SIGN_UP_URL}
+                className="sm:hidden whitespace-nowrap text-primary font-semibold"
+              >
+                Get started
               </a>
             </nav>
           </div>

@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { SIGN_UP_URL } from "@/lib/site";
 
 export default function CTASection() {
   return (
@@ -33,14 +35,22 @@ export default function CTASection() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <a
-            href="/demo"
-            className="inline-flex items-center px-16 py-4 bg-primary text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-primary transition-colors"
-          >
-            Request Demo
-          </a>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link
+              href="/demo"
+              className="inline-flex items-center justify-center px-16 py-4 bg-primary text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-primary transition-colors"
+            >
+              Request Demo
+            </Link>
+            <a
+              href={SIGN_UP_URL}
+              className="inline-flex items-center justify-center px-12 py-4 bg-white border-2 border-primary text-primary text-lg font-semibold rounded-lg hover:bg-primary/5 transition-colors"
+            >
+              Create your account
+            </a>
+          </div>
           <p className="mt-4 text-sm text-gray-600">
-            Free for 6 months • We'll set up your account
+            Free for 6 months • We&apos;ll set up your account
           </p>
         </motion.div>
       </div>

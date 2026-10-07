@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { WifiOff, Store, Users, Check, ArrowRight } from "lucide-react";
+import { WifiOff, Store, Users, Check } from "lucide-react";
 
 export default function WhyChooseUs() {
   const features = [
@@ -61,15 +61,16 @@ export default function WhyChooseUs() {
               Why businesses choose <span className="text-primary">SyncStore</span>
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              We've built the tools that modern African retailers need to thrive.
-              Offline-first, multi-location ready, and designed for growth.
+              We&apos;ve built the tools that modern African retailers need to
+              thrive. Offline-first, multi-location ready, and designed for
+              growth.
             </p>
           </motion.div>
         </div>
 
         {/* Features List */}
         <div className="space-y-32">
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <motion.div
               key={feature.id}
               className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-20 ${
@@ -109,7 +110,7 @@ export default function WhyChooseUs() {
                   {/* Decorative Background */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100 opacity-50" />
                   <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-                  
+
                   {/* Illustration Container */}
                   <div className="absolute inset-0 flex items-center justify-center p-8 md:p-12">
                     <div className="w-full h-full transform group-hover:scale-105 transition-transform duration-500 ease-out">
@@ -132,19 +133,19 @@ function OfflineIllustration() {
     <svg viewBox="0 0 400 300" className="w-full h-full" fill="none">
       {/* Background Elements */}
       <circle cx="200" cy="150" r="120" className="fill-gray-50" />
-      
+
       {/* Signal Bars (Disconnected) */}
       <g transform="translate(140, 100)">
         <rect x="0" y="30" width="10" height="20" className="fill-gray-300" rx="2" />
         <rect x="20" y="20" width="10" height="30" className="fill-gray-300" rx="2" />
         <rect x="40" y="10" width="10" height="40" className="fill-gray-300" rx="2" />
         <rect x="60" y="0" width="10" height="50" className="fill-gray-300" rx="2" />
-        
+
         {/* Cross out line */}
-        <motion.path 
-          d="M-10 10 L80 60" 
-          stroke="#EF4444" 
-          strokeWidth="4" 
+        <motion.path
+          d="M-10 10 L80 60"
+          stroke="#EF4444"
+          strokeWidth="4"
           strokeLinecap="round"
           initial={{ pathLength: 0, opacity: 0 }}
           whileInView={{ pathLength: 1, opacity: 1 }}
@@ -156,53 +157,53 @@ function OfflineIllustration() {
       <motion.g
         initial={{ y: 40, opacity: 0, scale: 0.9 }}
         whileInView={{ y: 0, opacity: 1, scale: 1 }}
-        transition={{ 
+        transition={{
           type: "spring",
           stiffness: 100,
           damping: 15,
-          delay: 0.8 
+          delay: 0.8
         }}
       >
         {/* Glow effect behind card */}
-        <motion.rect 
-          x="95" y="175" width="210" height="90" rx="20" 
-          className="fill-green-500/20" 
+        <motion.rect
+          x="95" y="175" width="210" height="90" rx="20"
+          className="fill-green-500/20"
           animate={{ opacity: [0.5, 0.8, 0.5] }}
           transition={{ duration: 2, repeat: Infinity }}
         />
-        
+
         <rect x="100" y="180" width="200" height="80" rx="16" className="fill-white" filter="url(#shadow)" />
         <rect x="100" y="180" width="200" height="80" rx="16" stroke="black" strokeWidth="2" className="stroke-gray-100" />
-        
+
         {/* Checkmark Circle */}
-        <motion.circle 
-          cx="150" cy="220" r="20" 
+        <motion.circle
+          cx="150" cy="220" r="20"
           className="fill-green-500"
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           transition={{ type: "spring", delay: 1.2 }}
         />
-        <motion.path 
-          d="M140 220l7 7 13-13" 
-          stroke="white" 
-          strokeWidth="3" 
-          strokeLinecap="round" 
-          strokeLinejoin="round" 
+        <motion.path
+          d="M140 220l7 7 13-13"
+          stroke="white"
+          strokeWidth="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           initial={{ pathLength: 0 }}
           whileInView={{ pathLength: 1 }}
           transition={{ duration: 0.4, delay: 1.4 }}
         />
-        
+
         {/* Text Lines */}
-        <motion.rect 
-          x="190" y="210" width="80" height="8" rx="4" 
+        <motion.rect
+          x="190" y="210" width="80" height="8" rx="4"
           className="fill-gray-900"
           initial={{ width: 0 }}
           whileInView={{ width: 80 }}
           transition={{ duration: 0.5, delay: 1.5 }}
         />
-        <motion.rect 
-          x="190" y="225" width="50" height="6" rx="3" 
+        <motion.rect
+          x="190" y="225" width="50" height="6" rx="3"
           className="fill-gray-400"
           initial={{ width: 0 }}
           whileInView={{ width: 50 }}
@@ -316,7 +317,7 @@ function CustomerIllustration() {
         transition={{ duration: 0.8, staggerChildren: 0.2 }}
       >
         {[0, 1, 2].map((i) => (
-           <motion.g key={i} 
+           <motion.g key={i}
              initial={{ y: 20, opacity: 0 }}
              whileInView={{ y: 0, opacity: 1 }}
              transition={{ delay: i * 0.2 }}
