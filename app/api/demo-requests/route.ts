@@ -44,6 +44,17 @@ export async function POST(request: Request) {
 
     if (!response.ok) {
       const error = await response.json().catch(() => ({}));
+      // Too many requests for this email: pass the API's "try again in …" message on
+      if (response.status === 429) {
+        return NextResponse.json(
+          {
+            message:
+              error.message ||
+              "You've already sent a few requests. Please try again later.",
+          },
+          { status: 429 }
+        );
+      }
       console.error("Demo request rejected by API:", response.status, error);
       return NextResponse.json(
         { message: "We couldn't send your request. Please try again." },
