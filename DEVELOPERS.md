@@ -1,6 +1,6 @@
 # SyncStore Website — Developer Guide
 
-Marketing site built with Next.js 16 (App Router), React 19 and Tailwind CSS 4. The user-facing guide is [README.md](README.md).
+Marketing site built with Next.js 16 (App Router), React 19 and Tailwind CSS 4. The project overview, with screenshots, is [README.md](README.md).
 
 ## Prerequisites
 
